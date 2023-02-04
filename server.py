@@ -1,9 +1,15 @@
 
 # * Import flask
 import flask
+# * Import router
+from controllers import routes
 
-# * Create Flask App
-APP = flask.Flask(__name__)
+# * Flask ALL
+# * Create Flask app
+app = flask.Flask(__name__)
+
+# * Mount the router
+app.register_blueprint(routes)
 
 # * Run Server
-APP.run(port=4000)
+app.run(port=4000)
